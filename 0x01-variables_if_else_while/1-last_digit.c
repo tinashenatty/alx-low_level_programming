@@ -1,9 +1,9 @@
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 /**
- * main - Determine if 5 is greater than, is less than 6 or 0
+ * main - Entry point
  *
- * Return : Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -12,21 +12,12 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	int l;
-
-	l = n % 10;
-	if (l > 5)
-	{
-		printf("Last digit of %d is %d and is greater than 5\n", n, l);
-	}
-	if (l == 0)
-	{
-		printf("Last digit of %d is %d and is 0\n", n, l);
-	}
-	if (l < 6 && l != 0)
-	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, l);
-	}
-
+	t = n % 10;
+	if (t > 5)
+		printf("Last digit of %d is %d and is greater than 5\n", n, t);
+	if (t == 0)
+		printf("Last digit of %d is %d and is 0\n", n, t);
+	if (t < 6 && m != 0)
+		printf("Last digit of %d is %d and is less than 6 and 0\n", n, t);
 	return (0);
 }
