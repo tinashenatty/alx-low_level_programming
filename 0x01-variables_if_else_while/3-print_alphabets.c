@@ -10,14 +10,18 @@
 /* your code goes there */
 int main(void)/* your code goes there */
 {
-	/* the code goes in here*/
 	char ch;
-	/* your code goes there */
+	char ma;
 
 	for (ch = 'a'; ch <= 'z'; ch++)
 	{
 		if (ch != 'e' && ch != 'q')
 			putchar(ch);
+	}
+	for (ma = 'A'; ma <= 'Z'; ma++)
+	{
+		if (ma != 'E' && ma != 'Q')
+			putchar(ma);
 	}
 	putchar('\n');
 	/* your code goes there */
