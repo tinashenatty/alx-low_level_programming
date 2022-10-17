@@ -7,34 +7,33 @@
 int main(void)
 {
 	int a;
-	int b = 0;
+	int b;
 	int c;
 
-	for (a = 0; a < 10; a++)
+	for (b = 0; b < 10; b++)
 	{
 		for (c = b; c < 10; c++)
 		{
-			if (a != c)
+			for (a = 0; a < 10; a++)
 			{
-				putchar(a);
+				if (b < c && c < a)
+			{
+				putchar(b);
 				putchar(c);
-			}
-			if (a == c)
-			{
-				continue;
-			}
-			if (a == '8' && c == '9')
-			{
+				putchar(a);
+				if (b == '7' && c == '8' && a == '9')
+				{
 				break;
-			}
-			else
-			{
+				}
+				else
+				{
 				putchar(',');
 				putchar(' ');
+				}
+		}
 			}
 		}
-		b++;
 	}
-		putchar('\n');
-		return (0);
+	putchar('\n');
+	return (0);
 }
