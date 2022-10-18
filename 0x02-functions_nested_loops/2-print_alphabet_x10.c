@@ -1,8 +1,9 @@
 #include "main.h"
+
 /**
  * print_alphabet_x10 - prints that
  */
-void print_alphabet_x10(void);
+void print_alphabet_x10(void)
 {
 	int num;
 	char ch;
