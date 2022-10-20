@@ -9,15 +9,14 @@ void more_numbers(void)
 {
 	int x, y;
 
-	for (y = 0; y <= 9; y++)
+	for (a = 1; a <= 10; a++)
 	{
-		for (a = 0; a <= 14; a++)
+		for (y = 0; y <= 14; y++)
 		{
-			if (a > 9)
-			{
-				_putchar((num / 10) + '0');
-			}
-			_putchar((num % 10) + '0');
+			if (y >= 10)
+			_putchar('1');
+			_pucthar(y % 10 + '0');
+
 		}
 
 		_putchar('\n');
