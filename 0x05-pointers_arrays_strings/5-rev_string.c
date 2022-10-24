@@ -2,7 +2,7 @@
 
 /**
  * rev_string - rev a string
- * @s: user input
+ * @s: input
  *
  * Return: string in rev
  */
@@ -10,7 +10,7 @@
 void rev_string(char *s)
 {
 	char ch = s[0];
-	int a = o;
+	int a = 0;
 	int b;
 
 	while (s[a] != '\0')
