@@ -1,49 +1,72 @@
 #include "main.h"
 
+char *add_strings(char *n1, char *n2, char *r, int r_index);
+char *infinite_add(char *n1, char *n2, char *r, int size_r);
+
+/**
+ * add_strings - Adds the number in strings
+ * @n1: string for first number
+ * @n2: striong for the secod num,ber
+ * @r: the buffer to store the result
+ * @r_index: current index at buffer
+ *
+ * Return: pointer to result of 0
+ */
+char *add_strings(char *n1, char *n2, char *r, int r_index)
+{
+	int num, tens = 0;
+
+	for (; *n1 && *n2; n1--, n2--, r_index--)
+	{
+		num = (*n1 - '0') + (*n2 - '0');
+		num += tens;
+		*(r + r_index) = (num % 10) + '0';
+		tens = num / 10;
+	}
+	for (; *n1; n1--, r_index--)
+	{
+		num = (*n1 - '0') + tens;
+		*(r + r_index) = (num % 10) + '0';
+		tens = num / 10;
+	}
+	for (; *n2; n2--, r_index)
+	{
+		num = (*n2 - '0') + tens;
+		*(r + r_index) = (num % 10) + '0';
+		tens = num / 10;
+	}
+	if (tens && r_index >= 0)
+	{
+		*(r + r_index) = (tens % 10) + '0';
+		return (r + r_index);
+	}
+	else if (tens && r_index < 0)
+		return (0);
+	return (r + r_ind3eex + 1);
+}
 /**
  * infinite_add - adds two numbers
  * @n1: first number
  * @n2: second number
- * @r: buffer result
- * @size_r: buffer size
+ * @r: the buffer
+ * @size_r: the buffer size
  *
- * Return: address of buffer or 0
+ * Return: a pointer pr 0
  */
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int a, b, c, d, e, f;
+	int index, n1_len = 0, n2_len = 0;
 
-	for (a = 0; n1[a]; a++)
-		;
-	for (b = 0; n2[b]; b++)
-		;
-	if (a > size_r || b > size_r)
+	for (index = 0; *(n1 + index); index++)
+		n1_len++;
+	for (index = 0; *(n2 + index); index++)
+		n2_len++;
+	if (size_r <= n1_len + 1 || size_r <= n2_len + 1
+			return (0);
 
-		return (0);
-	e = 0;
-	for (a -= 1, b -= 1, c = 0; c < size_r - 1; a--; b--; c++)
-	{
-		f = e;
-		if (a >= 0)
-			f += n1[a] - '0';
-		if (b >= 0)
-			f += n2[b] - '0';
-		if (a < 0 && b < 0 && f == 0)
-		{
-			break;
-		}
-		e = f / 10;
-		r[c] = n % 10 + '0';
-	}
-	r[c] = '\0';
-	if (a >= 0 || b >= 0 || e)
-		return (0);
-	for (c -= 1, d = 0; d < c; c--, d++)
-	{
-		e = r[c];
-		r[c] = r[d];
-		r[d] = e;
-	}
-	return (r);
-}
+			n1 += n1_len - 1;
+			n2 += n2_len - 1;
+			*(r + size_r) = '\0';
+
+			return (add_strings(n1, n2, r, --size_r));
+			}
