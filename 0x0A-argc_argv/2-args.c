@@ -1,24 +1,19 @@
 #include <stdio.h>
-#include "main.h"
 
 /**
- * main - Print all arguments it receives
- * @argc: count of arguments
+ * main - print all arguments received
+ * @argc: argument count
  * @argv: array of arguments
  *
- * Return: Always 0
+ * Return: 0
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv)
 {
-	int sum = 0;
+	int x;
 
-	if (argc > 0)
-	{
-		while (sum < argc)
-		{
-			printf("%s\n", argv[sum]);
-		}
-	}
+	for (x = 0; x < argc; x++)
+		printf("%s\n", argv[i]);
+
 	return (0);
 }
