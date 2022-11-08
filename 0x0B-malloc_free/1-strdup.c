@@ -2,15 +2,14 @@
 #include <stdlib.h>
 
 /**
- * _strdup - returns a pointer
- * @str: the source string
+ * _strdup - returns a pointer to a new space
+ * @str: source string
  *
- * Return: a pointer else NULL
+ * Return: pointer else Null
  */
-
 char *_strdup(char *str)
 {
-	char *c;
+	char *copy;
 	int i, len = 0;
 
 	if (str == NULL)
@@ -18,14 +17,15 @@ char *_strdup(char *str)
 
 	while (str[len] != '\0')
 		len++;
-	c = (char *)malloc((sizeof(char) * len) + 1;
-			if (c == NULL)
-			return (NULL);
 
-			for (i = 0; i < len; i++)
-			c[i] = str[i];
+	copy = (char *)malloc((sizeof(char) * len) + 1);
+	if (copy == NULL)
+		return (NULL);
 
-			c[len] = '\0';
+	for (i = 0; i < len; i++)
+		copy[i] = str[i];
 
-			return (c);
-			}
+	copy[len] = '\0';
+
+	return (copy);
+}
