@@ -1,19 +1,19 @@
+#include <stdlib.h>
 #include "main.h"
 
 /**
- * malloc_checked - normal termination
- * @b: allocated memory
+ * *malloc_checked - allocates memory using malloc
+ * @b: number to allocate
  *
- * Return: a pointer to the allocated memory
+ * Return: a pointer
  */
-
 void *malloc_checked(unsigned int b)
 {
-	void *i;
+	void *ptr;
 
-	i = malloc(b);
-	if (i == NULL)
+	ptr = malloc(b);
+
+	if (ptr == NULL)
 		exit(98);
-
-	return (i);
+	return (ptr);
 }
