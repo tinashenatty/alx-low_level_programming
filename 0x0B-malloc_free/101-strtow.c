@@ -48,7 +48,7 @@ int count_words(char *str)
 }
 
 /**
- * strtow: splits string into words
+ * strtow - splits string into words
  * @str: string
  *
  * Return: NULL else ""
@@ -60,7 +60,7 @@ char **strtow(char *str)
 
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
-	
+
 	words = count_words(str);
 	if (words == 0)
 		return (NULL);
